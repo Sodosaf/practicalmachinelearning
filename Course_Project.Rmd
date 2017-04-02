@@ -98,7 +98,7 @@ The variable that we are going to predict is the "classe" column. It contains ca
 levels(training$classe)
 ```
 
-This means you need a classification algorithm. The first model will be a decision tree algorithm. You can use the train() function of the caret package and set the cross validation parameters like explained above:
+This means you need a classification algorithm. The first model will be a **Decision Tree** algorithm. You can use the train() function of the caret package and set the cross validation parameters like explained above:
 
 ```{r}
 library(caret)
@@ -126,7 +126,7 @@ print(mod1)
 
 ## Model 2: Random Forest
 
-In the next step we try another model to see if the accuracy can be improved. The Random Forest algorithm combines and averages multiple Decision Trees and correts the Decision Trees' habit for overfitting. You can again use the train() function:
+In the next step we try another model to see if the accuracy can be improved. The **Random Forest** algorithm combines and averages multiple Decision Trees and correts the Decision Trees' habit for overfitting. You can again use the train() function:
 
 ```{r}
 mod2 <- train(classe ~ ., 
@@ -139,7 +139,8 @@ mod2 <- train(classe ~ .,
 
 ```
 
-The resulting model has a much higher accuracy of about 99%. As the train() function used cross validation we can expect a similar accuracy also for predicting on completely unknown data. Details about the model can be printed out by:
+The resulting model has a much higher accuracy of about 99%. As the train() function used cross validation we can expect a similar accuracy also for predicting on completely unknown data. This means the expected **out-of-sample error** is about 1 %.
+Details about the model can be printed out by:
 
 ```{r}
 print(mod2)
